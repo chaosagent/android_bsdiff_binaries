@@ -31,7 +31,8 @@ adb push /tmp/patch /data/local/patch
 echo "Applying patch..."
 adb shell '/data/local/bspatch /data/local/prev_version.apk /data/local/prev_version.apk /data/local/patch'
 
+cp "$apk_path" "$prev_apk_path"
+
 echo "Installing..."
 adb shell 'pm install -r /data/local/prev_version.apk'
 
-cp "$apk_path" "$prev_apk_path"
